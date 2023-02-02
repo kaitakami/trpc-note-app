@@ -49,7 +49,7 @@ const Edit = () => {
       editNote.mutate(formState)
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       router.push({
-        pathname: '/post/[pid]',
+        pathname: `/${id}`,
       })
 
       setFormState(INITIAL_STATE)
@@ -71,7 +71,7 @@ const Edit = () => {
           <form className="flex gap-6 flex-col md:max-w-4xl w-screen p-4 pt-12" onSubmit={handleSubmit}>
             <input className="bg-transparent rounded-md border border-slate-600 px-2 py-3" type="text" name="title" value={formState.title} onChange={handleChange} placeholder="Change the title" required />
             <textarea className="bg-transparent rounded-md border border-slate-600 px-2 py-3" name="description" value={formState.description} onChange={handleChange} placeholder="Change the note's content" required />
-            <button type="submit" className="rounded-md border border-slate-600 bg-slate-700 p-5 font-bold hover:bg-transparent transition-colors">Add Note</button>
+            <button type="submit" className="rounded-md border border-slate-600 bg-slate-700 p-5 font-bold hover:bg-transparent transition-colors">Edit Note</button>
           </form>
         }
       </div>
